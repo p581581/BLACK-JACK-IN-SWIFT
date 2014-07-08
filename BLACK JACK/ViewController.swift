@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBAction func quit(sender : AnyObject) {
+        println("quit")
+        exit(0)
+    }
                             
     override func viewDidLoad() {
         super.viewDidLoad()
