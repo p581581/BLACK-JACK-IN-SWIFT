@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8D90897196B84D000881B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90896196B84D000881B7D /* AppDelegate.swift */; };
+		E8D90899196B84D000881B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90898196B84D000881B7D /* ViewController.swift */; };
+		E8D9089C196B84D000881B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D9089A196B84D000881B7D /* Main.storyboard */; };
+		E8D9089E196B84D000881B7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D9089D196B84D000881B7D /* Images.xcassets */; };
+		E8D908AA196B84D000881B7D /* BLACK_JACKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D908A9196B84D000881B7D /* BLACK_JACKTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8D908A4196B84D000881B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8D90889196B84D000881B7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8D90890196B84D000881B7D;
+			remoteInfo = "BLACK JACK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8D90891196B84D000881B7D /* BLACK JACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLACK JACK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D90895196B84D000881B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D90896196B84D000881B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8D90898196B84D000881B7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8D9089B196B84D000881B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8D9089D196B84D000881B7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E8D908A3196B84D000881B7D /* BLACK JACKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BLACK JACKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D908A8196B84D000881B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D908A9196B84D000881B7D /* BLACK_JACKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLACK_JACKTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D9088E196B84D000881B7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D908A0196B84D000881B7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8D90888196B84D000881B7D = {
+			isa = PBXGroup;
+			children = (
+				E8D90893196B84D000881B7D /* BLACK JACK */,
+				E8D908A6196B84D000881B7D /* BLACK JACKTests */,
+				E8D90892196B84D000881B7D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D90892196B84D000881B7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D90891196B84D000881B7D /* BLACK JACK.app */,
+				E8D908A3196B84D000881B7D /* BLACK JACKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D90893196B84D000881B7D /* BLACK JACK */ = {
+			isa = PBXGroup;
+			children = (
+				E8D90896196B84D000881B7D /* AppDelegate.swift */,
+				E8D90898196B84D000881B7D /* ViewController.swift */,
+				E8D9089A196B84D000881B7D /* Main.storyboard */,
+				E8D9089D196B84D000881B7D /* Images.xcassets */,
+				E8D90894196B84D000881B7D /* Supporting Files */,
+			);
+			path = "BLACK JACK";
+			sourceTree = "<group>";
+		};
+		E8D90894196B84D000881B7D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8D90895196B84D000881B7D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8D908A6196B84D000881B7D /* BLACK JACKTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8D908A9196B84D000881B7D /* BLACK_JACKTests.swift */,
+				E8D908A7196B84D000881B7D /* Supporting Files */,
+			);
+			path = "BLACK JACKTests";
+			sourceTree = "<group>";
+		};
+		E8D908A7196B84D000881B7D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8D908A8196B84D000881B7D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8D90890196B84D000881B7D /* BLACK JACK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D908AD196B84D000881B7D /* Build configuration list for PBXNativeTarget "BLACK JACK" */;
+			buildPhases = (
+				E8D9088D196B84D000881B7D /* Sources */,
+				E8D9088E196B84D000881B7D /* Frameworks */,
+				E8D9088F196B84D000881B7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BLACK JACK";
+			productName = "BLACK JACK";
+			productReference = E8D90891196B84D000881B7D /* BLACK JACK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8D908A2196B84D000881B7D /* BLACK JACKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D908B0196B84D000881B7D /* Build configuration list for PBXNativeTarget "BLACK JACKTests" */;
+			buildPhases = (
+				E8D9089F196B84D000881B7D /* Sources */,
+				E8D908A0196B84D000881B7D /* Frameworks */,
+				E8D908A1196B84D000881B7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8D908A5196B84D000881B7D /* PBXTargetDependency */,
+			);
+			name = "BLACK JACKTests";
+			productName = "BLACK JACKTests";
+			productReference = E8D908A3196B84D000881B7D /* BLACK JACKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D90889196B84D000881B7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = 581;
+				TargetAttributes = {
+					E8D90890196B84D000881B7D = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					E8D908A2196B84D000881B7D = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = E8D90890196B84D000881B7D;
+					};
+				};
+			};
+			buildConfigurationList = E8D9088C196B84D000881B7D /* Build configuration list for PBXProject "BLACK JACK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8D90888196B84D000881B7D;
+			productRefGroup = E8D90892196B84D000881B7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D90890196B84D000881B7D /* BLACK JACK */,
+				E8D908A2196B84D000881B7D /* BLACK JACKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D9088F196B84D000881B7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D9089C196B84D000881B7D /* Main.storyboard in Resources */,
+				E8D9089E196B84D000881B7D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D908A1196B84D000881B7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D9088D196B84D000881B7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D90899196B84D000881B7D /* ViewController.swift in Sources */,
+				E8D90897196B84D000881B7D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D9089F196B84D000881B7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D908AA196B84D000881B7D /* BLACK_JACKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8D908A5196B84D000881B7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8D90890196B84D000881B7D /* BLACK JACK */;
+			targetProxy = E8D908A4196B84D000881B7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8D9089A196B84D000881B7D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D9089B196B84D000881B7D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8D908AB196B84D000881B7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8D908AC196B84D000881B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8D908AE196B84D000881B7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BLACK JACK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E8D908AF196B84D000881B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BLACK JACK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E8D908B1196B84D000881B7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BLACK JACK.app/BLACK JACK";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BLACK JACKTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		E8D908B2196B84D000881B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BLACK JACK.app/BLACK JACK";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BLACK JACKTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D9088C196B84D000881B7D /* Build configuration list for PBXProject "BLACK JACK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D908AB196B84D000881B7D /* Debug */,
+				E8D908AC196B84D000881B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D908AD196B84D000881B7D /* Build configuration list for PBXNativeTarget "BLACK JACK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D908AE196B84D000881B7D /* Debug */,
+				E8D908AF196B84D000881B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E8D908B0196B84D000881B7D /* Build configuration list for PBXNativeTarget "BLACK JACKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D908B1196B84D000881B7D /* Debug */,
+				E8D908B2196B84D000881B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8D90889196B84D000881B7D /* Project object */;
+}
