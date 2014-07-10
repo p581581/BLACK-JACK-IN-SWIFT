@@ -205,8 +205,7 @@ class GameViewController: UIViewController{
                 style: UIAlertActionStyle.Default,
                 handler: {alert in
                     
-                    let des : AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("menu")
-                    self.presentModalViewController(des as UIViewController, animated:true)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
             )
         )
