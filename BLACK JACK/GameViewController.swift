@@ -204,7 +204,6 @@ class GameViewController: UIViewController{
                 title: "Ok",
                 style: UIAlertActionStyle.Default,
                 handler: {alert in
-                    
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
             )
