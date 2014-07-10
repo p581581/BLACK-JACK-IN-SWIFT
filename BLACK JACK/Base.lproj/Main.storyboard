@@ -7,12 +7,12 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="menu" storyboardIdentifier="menu" id="vXZ-lx-hvc" customClass="ViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfj-iG-DAj"/>
                         <viewControllerLayoutGuide type="bottom" id="haq-pX-bzK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="menu" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="quit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cU1-mx-io5"/>
+                                    <action selector="quit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CQL-WQ-1Qg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-n7-jqz">
