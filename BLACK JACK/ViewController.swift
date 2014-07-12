@@ -32,7 +32,6 @@ class ViewController: UIViewController {
             
             (vc as UIAlertController).addAction(UIAlertAction(title: "Buy", style: UIAlertActionStyle.Default, handler: {alert in self.BuyChip()}))
         }
-        
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -45,9 +44,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         gameVC =  self.storyboard.instantiateViewControllerWithIdentifier("game") as UIViewController!
-
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -61,7 +58,6 @@ class ViewController: UIViewController {
         usrdef.setObject(chips, forKey:"chips")
         usrdef.synchronize()
         chipsLeb.text = "\(chips)"
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,4 +73,3 @@ class ViewController: UIViewController {
         chipsLeb.text = "\(chips)"
     }
 }
-

@@ -75,13 +75,12 @@ class GameViewController: UIViewController{
             betBtn.setTitle( "\(bet! + 20)", forState: .Normal)
         }
     }
-    
 
     // Global var
     var dealerCardViews = UIImageView[]()
     var playerCardViews = UIImageView[]()
-    var gameModel: BJGameModel
     let usrdef = NSUserDefaults.standardUserDefaults()
+    var gameModel: BJGameModel
     
     init(coder aDecoder: NSCoder!) {
         gameModel = BJGameModel()
@@ -94,9 +93,7 @@ class GameViewController: UIViewController{
             name: gameModel.BJNotificationGameDidEnd,
             object: nil
         )
-
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,7 +176,6 @@ class GameViewController: UIViewController{
     }
     
     func showSecondDealerCard() {
-        
         // show the Second Card, init isn't face up
         var card: BJCard = self.gameModel.lastDealerCard();
         card.isFaceUp = true
@@ -222,11 +218,20 @@ class GameViewController: UIViewController{
         let didDealerWin: AnyObject! = notification.userInfo["didDealerWin"]
         let cal = betBtn.titleLabel.text.toInt()
         var chips : Int = usrdef.objectForKey("chips") as Int
-        var message = didDealerWin? as NSObject == 1 ? "Dealer won": "You won"
-
+        var title, message : String
+        
+        // revise the alert message
+        if didDealerWin? as NSObject == 1 {
+            title = "Dealer won"
+            message = "Sorry ! You lose \(cal) points."
+        } else {
+            title = "You won"
+            message = "Congrats ! You gain \(cal) points."
+        }
+        
         // Create a UIAlertController to show Game over
         let alc = UIAlertController(
-            title: "Game Over",
+            title: title,
             message: message,
             preferredStyle: UIAlertControllerStyle.Alert
         )
@@ -234,11 +239,10 @@ class GameViewController: UIViewController{
         // add button and the handler in alert meesage
         alc.addAction(
             UIAlertAction(
-                title: "Back to Menu",
+                title: "Menu",
                 style: UIAlertActionStyle.Default,
                 handler: {alert in
                     // Back to Menu
-                    
                     if didDealerWin? as NSObject == 1 {
                         chips -= cal!
                     } else {
