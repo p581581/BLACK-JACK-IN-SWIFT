@@ -28,14 +28,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BargainingChip.png" translatesAutoresizingMaskIntoConstraints="NO" id="qVm-WN-NKz">
-                                <rect key="frame" x="85" y="373" width="150" height="150"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black_jack" translatesAutoresizingMaskIntoConstraints="NO" id="9Jw-cJ-7rH">
                                 <rect key="frame" x="15" y="46" width="150" height="150"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fd-kA-3cx">
-                                <rect key="frame" x="100" y="288" width="120" height="60"/>
+                                <rect key="frame" x="100" y="264" width="120" height="40"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                 <state key="normal" title="QUIT">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,20 +42,43 @@
                                     <action selector="quit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CQL-WQ-1Qg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgT-Nf-ebd">
+                                <rect key="frame" x="88" y="312" width="145" height="48"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
+                                <state key="normal" title="CHIPS +">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BuyingChips:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x26-Ic-iGC"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-n7-jqz">
-                                <rect key="frame" x="100" y="220" width="120" height="60"/>
+                                <rect key="frame" x="100" y="216" width="120" height="40"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                 <state key="normal" title="play">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M4d-Jb-5fe" kind="modal" id="snJ-ki-Vgh"/>
+                                    <action selector="play:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tzz-QL-CBo"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BargainingChip.png" translatesAutoresizingMaskIntoConstraints="NO" id="qVm-WN-NKz">
+                                <rect key="frame" x="20" y="388" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1y-cp-9px">
+                                <rect key="frame" x="179" y="430" width="126" height="66"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chipsLeb" destination="v1y-cp-9px" id="Kbk-Fq-RnS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,38 +86,17 @@
         <!--Game View Controller-->
         <scene sceneID="SX6-fF-6Ib">
             <objects>
-                <viewController id="M4d-Jb-5fe" customClass="GameViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="game" storyboardIdentifier="game" id="M4d-Jb-5fe" customClass="GameViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B8B-8K-nKp"/>
                         <viewControllerLayoutGuide type="bottom" id="URC-av-RQm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g08-Gf-OvU">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="game" id="g08-Gf-OvU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-YI-0eq">
-                                <rect key="frame" x="39" y="85" width="103" height="144"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="2cg-hi-71n">
-                                <rect key="frame" x="74" y="85" width="103" height="144"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q1F-Lh-Xr1">
-                                <rect key="frame" x="109" y="85" width="103" height="144"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-Mo-ibK">
-                                <rect key="frame" x="144" y="85" width="103" height="144"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="702-Fo-W8G">
-                                <rect key="frame" x="179" y="85" width="103" height="144"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O8-qm-Yrz">
-                                <rect key="frame" x="89" y="16" width="142" height="61"/>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="37"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAq-ha-mbc">
-                                <rect key="frame" x="0.0" y="497" width="79" height="71"/>
+                                <rect key="frame" x="0.0" y="508" width="79" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="-90" minY="0.0" maxX="0.0" maxY="-15"/>
                                 <state key="normal" title="Hit" image="hit.png">
@@ -108,8 +107,20 @@
                                     <action selector="hit:" destination="M4d-Jb-5fe" eventType="touchUpInside" id="mQx-rO-0DG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sO-IE-pTa">
+                                <rect key="frame" x="101" y="508" width="118" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="titleEdgeInsets" minX="-150" minY="0.0" maxX="0.0" maxY="-14"/>
+                                <state key="normal" title="20" image="bet.png">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="betting:" destination="M4d-Jb-5fe" eventType="touchUpInside" id="wv1-bn-eao"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uII-Oe-a7X">
-                                <rect key="frame" x="247" y="497" width="79" height="71"/>
+                                <rect key="frame" x="247" y="508" width="79" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="-64" minY="0.0" maxX="0.0" maxY="-15"/>
                                 <state key="normal" title="Stand" image="stand.png">
@@ -121,22 +132,43 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-Pr-qZj">
-                                <rect key="frame" x="39" y="293" width="103" height="144"/>
+                                <rect key="frame" x="39" y="283" width="103" height="144"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="QIK-j8-vdt">
-                                <rect key="frame" x="74" y="293" width="103" height="144"/>
+                                <rect key="frame" x="74" y="283" width="103" height="144"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-Qu-eCC">
-                                <rect key="frame" x="109" y="293" width="103" height="144"/>
+                                <rect key="frame" x="109" y="283" width="103" height="144"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ET-t8-1UR">
-                                <rect key="frame" x="144" y="293" width="103" height="144"/>
+                                <rect key="frame" x="144" y="283" width="103" height="144"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-9X-9m4">
-                                <rect key="frame" x="179" y="293" width="103" height="144"/>
+                                <rect key="frame" x="179" y="283" width="103" height="144"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-FJ-stG">
-                                <rect key="frame" x="89" y="445" width="142" height="61"/>
+                                <rect key="frame" x="89" y="433" width="142" height="61"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-YI-0eq">
+                                <rect key="frame" x="39" y="87" width="103" height="144"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="2cg-hi-71n">
+                                <rect key="frame" x="74" y="87" width="103" height="144"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q1F-Lh-Xr1">
+                                <rect key="frame" x="109" y="87" width="103" height="144"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-Mo-ibK">
+                                <rect key="frame" x="144" y="87" width="103" height="144"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="702-Fo-W8G">
+                                <rect key="frame" x="179" y="87" width="103" height="144"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O8-qm-Yrz">
+                                <rect key="frame" x="89" y="21" width="142" height="61"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="37"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -145,6 +177,7 @@
                         <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="betBtn" destination="2sO-IE-pTa" id="ByX-3c-nhB"/>
                         <outlet property="dealerCard1" destination="hDi-YI-0eq" id="ib5-gQ-gYB"/>
                         <outlet property="dealerCard2" destination="2cg-hi-71n" id="rL3-jm-QDP"/>
                         <outlet property="dealerCard3" destination="Q1F-Lh-Xr1" id="eiE-48-nH1"/>
@@ -166,6 +199,7 @@
     </scenes>
     <resources>
         <image name="BargainingChip.png" width="542" height="483"/>
+        <image name="bet.png" width="150" height="75"/>
         <image name="black_jack" width="220" height="209"/>
         <image name="card-back.png" width="118" height="176"/>
         <image name="hit.png" width="74" height="71"/>

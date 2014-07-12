@@ -21,26 +21,28 @@ class GameViewController: UIViewController{
     }
 
     // The dealer's card outlets
-    @IBOutlet var dealerCard1 : UIImageView 
-    @IBOutlet var dealerCard2 : UIImageView
-    @IBOutlet var dealerCard3 : UIImageView
-    @IBOutlet var dealerCard4 : UIImageView
-    @IBOutlet var dealerCard5 : UIImageView
+    @IBOutlet var dealerCard1 : UIImageView = nil
+    @IBOutlet var dealerCard2 : UIImageView = nil
+    @IBOutlet var dealerCard3 : UIImageView = nil
+    @IBOutlet var dealerCard4 : UIImageView = nil
+    @IBOutlet var dealerCard5 : UIImageView = nil
     
     // The player's card outlets
-    @IBOutlet var playerCard1 : UIImageView
-    @IBOutlet var playerCard2 : UIImageView
-    @IBOutlet var playerCard3 : UIImageView
-    @IBOutlet var playerCard4 : UIImageView
-    @IBOutlet var playerCard5 : UIImageView
+    @IBOutlet var playerCard1 : UIImageView = nil
+    @IBOutlet var playerCard2 : UIImageView = nil
+    @IBOutlet var playerCard3 : UIImageView = nil
+    @IBOutlet var playerCard4 : UIImageView = nil
+    @IBOutlet var playerCard5 : UIImageView = nil
     
     // Button's outlet
-    @IBOutlet var hitBtn : UIButton
-    @IBOutlet var standBtn : UIButton
+    @IBOutlet var hitBtn : UIButton = nil
+    @IBOutlet var standBtn : UIButton = nil
+    @IBOutlet var betBtn : UIButton = nil
     
     // Actions
     @IBAction func hit(sender : AnyObject) {
         println("hit")
+        self.betBtn.enabled = false
         
         // deal the card to Player, and face it up
         var card: BJCard = self.gameModel.nextPlayerCard()
@@ -57,16 +59,29 @@ class GameViewController: UIViewController{
     
     @IBAction func stand(sender : AnyObject) {
         println("stand")
+        self.betBtn.enabled = false
         
         // change the Game Stage
         self.gameModel.gameStage = .Dealer
         changeDealerTurn();
     }
+    
+    @IBAction func betting(sender : AnyObject) {
+        let bet = betBtn.titleLabel.text.toInt()
+        let chips : Int = usrdef.objectForKey("chips") as Int
+        
+        // check whether the bet is over than the chips value
+        if chips >= bet! + 20 {
+            betBtn.setTitle( "\(bet! + 20)", forState: .Normal)
+        }
+    }
+    
 
     // Global var
     var dealerCardViews = UIImageView[]()
     var playerCardViews = UIImageView[]()
     var gameModel: BJGameModel
+    let usrdef = NSUserDefaults.standardUserDefaults()
     
     init(coder aDecoder: NSCoder!) {
         gameModel = BJGameModel()
@@ -85,8 +100,6 @@ class GameViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         // init
         dealerCardViews = [dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5]
         playerCardViews = [playerCard1, playerCard2, playerCard3, playerCard4, playerCard5]
@@ -105,7 +118,7 @@ class GameViewController: UIViewController{
     func renderCards() {
         
         // get the max number of card
-        var maxCard = self.gameModel.maxPlayerCards;
+        let maxCard = self.gameModel.maxPlayerCards;
         var dealerCard, playerCard:BJCard
         var dealerCardView, playerCardView: UIImageView
         
@@ -159,6 +172,10 @@ class GameViewController: UIViewController{
         // enable the hit and stand button
         self.standBtn.enabled = true
         self.hitBtn.enabled = true
+        self.betBtn.enabled = true
+        
+        // reset the bet
+        betBtn.setTitle("20", forState: .Normal)
     }
     
     func showSecondDealerCard() {
@@ -203,8 +220,10 @@ class GameViewController: UIViewController{
     func handleNotificationGameDidEnd(notification: NSNotification) {
         // Game over
         let didDealerWin: AnyObject! = notification.userInfo["didDealerWin"]
+        let cal = betBtn.titleLabel.text.toInt()
+        var chips : Int = usrdef.objectForKey("chips") as Int
         var message = didDealerWin? as NSObject == 1 ? "Dealer won": "You won"
-        
+
         // Create a UIAlertController to show Game over
         let alc = UIAlertController(
             title: "Game Over",
@@ -219,7 +238,15 @@ class GameViewController: UIViewController{
                 style: UIAlertActionStyle.Default,
                 handler: {alert in
                     // Back to Menu
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    
+                    if didDealerWin? as NSObject == 1 {
+                        chips -= cal!
+                    } else {
+                        chips += cal!
+                    }
+                    self.usrdef.setObject(chips, forKey:"chips")
+                    self.usrdef.synchronize()
+                    self.dismissViewControllerAnimated(true, completion:nil)
                 }
             )
         )
@@ -232,6 +259,5 @@ class GameViewController: UIViewController{
         var time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay_cal))
         dispatch_after(time, dispatch_get_main_queue(),{NSThread.detachNewThreadSelector(Selector(funcName), toTarget: self , withObject: withObject)})
     }
-    
 }
 

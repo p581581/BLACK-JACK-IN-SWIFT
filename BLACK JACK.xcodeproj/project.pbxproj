@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E83A6E291971818700445B4F /* bet.png in Resources */ = {isa = PBXBuildFile; fileRef = E83A6E281971818700445B4F /* bet.png */; };
 		E8D90897196B84D000881B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90896196B84D000881B7D /* AppDelegate.swift */; };
 		E8D90899196B84D000881B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90898196B84D000881B7D /* ViewController.swift */; };
 		E8D9089C196B84D000881B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D9089A196B84D000881B7D /* Main.storyboard */; };
@@ -142,6 +143,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E83A6E281971818700445B4F /* bet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bet.png; sourceTree = "<group>"; };
 		E8D90891196B84D000881B7D /* BLACK JACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLACK JACK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D90895196B84D000881B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D90896196B84D000881B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		E8D908B5196B853F00881B7D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E83A6E281971818700445B4F /* bet.png */,
 				E8D908B6196B853F00881B7D /* BargainingChip.png */,
 				E8D908B7196B853F00881B7D /* black_jack */,
 				E8D908B8196B853F00881B7D /* card-back.png */,
@@ -658,6 +661,7 @@
 				E8D9093A196B853F00881B7D /* club-2@2x.png in Resources */,
 				E8D90966196B853F00881B7D /* grass.jpg in Resources */,
 				E8D9092C196B853F00881B7D /* black_jack in Resources */,
+				E83A6E291971818700445B4F /* bet.png in Resources */,
 				E8D9099C196B853F00881B7D /* stand.png in Resources */,
 				E8D90962196B853F00881B7D /* diamond-8.png in Resources */,
 				E8D90963196B853F00881B7D /* diamond-8@2x.png in Resources */,
@@ -881,6 +885,7 @@
 				E8D908AF196B84D000881B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D908B0196B84D000881B7D /* Build configuration list for PBXNativeTarget "BLACK JACKTests" */ = {
 			isa = XCConfigurationList;
@@ -889,6 +894,7 @@
 				E8D908B2196B84D000881B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
