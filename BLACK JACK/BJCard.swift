@@ -60,7 +60,7 @@ class BJCard {
         self.digit = -1
     }
     
-//    判斷是否為Ace
+    // 判斷是否為Ace
     func isAnAce() -> Bool{
         if self.digit == 1 {
             return true
@@ -68,7 +68,7 @@ class BJCard {
         return false
     }
     
-//    判斷是否為10以上
+    // 判斷是否為10以上
     func isFaceOrTenCard() -> Bool {
         if self.digit > 9 {
             return true
@@ -77,7 +77,7 @@ class BJCard {
     }
     
     
-//    取得點數對應的圖片
+    // 取得點數對應的圖片
     func getCardImage() -> UIImage {
     
         var suit : String;
@@ -109,9 +109,8 @@ class BJCard {
                 cards.append(card)
             }
         }
-        
+        // shuffle, that is, let the card be randomly permute
         cards.shuffle()
-        
         return cards
     }
 

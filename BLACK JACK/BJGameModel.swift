@@ -10,6 +10,7 @@
 import Foundation
 
 extension Array {
+    // get last
     var last: T {
     return self[self.endIndex - 1]
     }
@@ -43,10 +44,8 @@ class BJGameModel {
     }
     
     func resetGame(){
-        let card = BJCard()
-        
-        self.cards = card.generateAPackOfRandCards()
-        
+        // init the stage and the cards
+        self.cards = BJCard().generateAPackOfRandCards()
         self.playerCards =  BJCard[]()
         self.dealerCards = BJCard[]()
         self.gameStage = BJGameStage()
@@ -94,17 +93,24 @@ class BJGameModel {
         
         switch self.gameStage {
         case .Player:
+            // check whether the card's score are bust
             if areCardsBust(self.playerCards) {
+                
                 self.gameStage = .GameOver
                 self.didDealerWin = true
                 notifyGameDidEnd()
+                
             } else if calculateBestScore(self.playerCards) == 21 {
+                
                 self.gameStage = .Dealer
+                
             } else if self.playerCards.count == self.maxPlayerCards {
+                
                 self.gameStage = .Dealer
+                
             }
         case .Dealer:
-            //check if we're done now?
+            // check if we're done now?
             if areCardsBust(self.dealerCards) {
                 
                 self.gameStage = .GameOver
@@ -119,17 +125,16 @@ class BJGameModel {
                 
             } else {
                 
-                //should the dealer stop, has he won?
+                // should the dealer stop, has he won?
                 var dealerScore = calculateBestScore(self.dealerCards)
-
-
+                
                 if dealerScore >= 17 {
-                //keep playing, dealer can't stand on less than 17
+                // dealer can't stand on less than 17
                     
                     var playerScore = calculateBestScore(self.playerCards)
                     if playerScore <= dealerScore {
-                        
-                        //dealer has equalled or beaten the player so the game is over, and Dealer win.
+                        // Dealer has equalled or beaten the player, so Dealer win.
+                        // If not, Dealer keep playing until win or bust.
                         self.didDealerWin = true
                         self.gameStage = .GameOver
                         notifyGameDidEnd()
@@ -143,6 +148,7 @@ class BJGameModel {
     }
     
     func notifyGameDidEnd() {
+        // notify view controller that the game is over
         var dict = ["didDealerWin":didDealerWin]
         NSNotificationCenter.defaultCenter().postNotificationName(BJNotificationGameDidEnd, object: self, userInfo: dict)
     }
