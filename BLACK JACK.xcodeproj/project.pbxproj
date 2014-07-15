@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E83A6E291971818700445B4F /* bet.png in Resources */ = {isa = PBXBuildFile; fileRef = E83A6E281971818700445B4F /* bet.png */; };
+		E8B3AFF11975115C00FA49B8 /* BJCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D908B3196B853F00881B7D /* BJCard.swift */; };
+		E8B3AFF21975115F00FA49B8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D909A1196B862100881B7D /* GameViewController.swift */; };
+		E8B3AFF31975116300FA49B8 /* BJGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D908B4196B853F00881B7D /* BJGameModel.swift */; };
+		E8B3AFF41975116700FA49B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90898196B84D000881B7D /* ViewController.swift */; };
 		E8D90897196B84D000881B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90896196B84D000881B7D /* AppDelegate.swift */; };
 		E8D90899196B84D000881B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D90898196B84D000881B7D /* ViewController.swift */; };
 		E8D9089C196B84D000881B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D9089A196B84D000881B7D /* Main.storyboard */; };
@@ -705,7 +709,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B3AFF41975116700FA49B8 /* ViewController.swift in Sources */,
 				E8D908AA196B84D000881B7D /* BLACK_JACKTests.swift in Sources */,
+				E8B3AFF21975115F00FA49B8 /* GameViewController.swift in Sources */,
+				E8B3AFF11975115C00FA49B8 /* BJCard.swift in Sources */,
+				E8B3AFF31975116300FA49B8 /* BJGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

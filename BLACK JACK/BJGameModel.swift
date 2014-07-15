@@ -117,10 +117,16 @@ class BJGameModel {
                 self.didDealerWin = false
                 notifyGameDidEnd()
                 
-            } else if self.dealerCards.count == self.maxPlayerCards {
+            } else if self.dealerCards.count == self.maxPlayerCards &&  self.playerCards.count == self.maxPlayerCards {
                 
                 self.gameStage = .GameOver
                 calculateWinner()
+                notifyGameDidEnd()
+                
+            } else if self.dealerCards.count == self.maxPlayerCards {
+                
+                self.gameStage = .GameOver
+                self.didDealerWin = true
                 notifyGameDidEnd()
                 
             } else {

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         let chips : Int? = usrdef.objectForKey("chips") as? Int
         var vc = gameVC
         
+        // The point of the chips is not enough to play game
         if chips < 20 {
             vc = UIAlertController(
                 title: "You can't play it.",
