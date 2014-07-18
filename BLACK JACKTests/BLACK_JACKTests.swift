@@ -42,6 +42,49 @@ class BLACK_JACKTests: XCTestCase {
         
         var cards = card.generateAPackOfRandCards()
         XCTAssertEqual(cards.count, 52, "generate the wrong number of cards")
+    }
+    
+    func testBJGameModel() {
+        var gameModel = BJGameModel()
+        var cardNum = gameModel.cards.count
+        
+        var card = gameModel.nextCard()
+        
+        XCTAssertEqual(gameModel.cards.count, cardNum - 1, "the number of card is wrong")
+        XCTAssertNotNil(card, "the next card is nil")
+        
+        var playerCardNum = gameModel.playerCards.count
+        card = gameModel.nextPlayerCard()
+        XCTAssertEqual(gameModel.playerCards.count, playerCardNum + 1, "the number of player's card is wrong")
+        XCTAssertNotNil(card, "the next player's card is nil")
+        
+        var dealerCardNum = gameModel.dealerCards.count
+        card = gameModel.nextDealerCard()
+        XCTAssertEqual(gameModel.dealerCards.count, dealerCardNum + 1, "the number of dealer's card is wrong")
+        XCTAssertNotNil(card, "the next dealer's card is nil")
+        
+        var suit = BJCard.BJCardSuit.Spade
+        var cards = [BJCard(digit: 1, suit: suit), BJCard(digit: 9, suit: suit), BJCard(digit: 1, suit: suit)]
+        XCTAssertFalse(gameModel.areCardsBust(cards), "the cards bust incorrectly")
+        XCTAssertEqual(gameModel.calculateBestScore(cards), 21, "calculate the wrong score")
+        
+        cards = [BJCard(digit: 10, suit: suit), BJCard(digit: 10, suit: suit), BJCard(digit: 2, suit: suit)]
+        XCTAssert(gameModel.areCardsBust(cards), "the cards not bust incorrectly")
+        XCTAssertEqual(gameModel.calculateBestScore(cards), 0, "calculate the wrong score")
+        
+        // tesing updating game stage
+        gameModel = BJGameModel()
+        
+        //player got 21 points
+        gameModel.playerCards = [BJCard(digit: 10, suit: suit), BJCard(digit: 1, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (should be Dealer stage)")
+        
+        //player got 5 cards (max)
+        gameModel.playerCards = [BJCard(digit: 6, suit: suit), BJCard(digit: 1, suit: suit), BJCard(digit: 2, suit: suit), BJCard(digit: 3, suit: suit), BJCard(digit: 5, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (should be Dealer stage)")
+        
         
         
     }

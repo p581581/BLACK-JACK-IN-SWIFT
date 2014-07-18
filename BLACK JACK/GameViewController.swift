@@ -52,7 +52,7 @@ class GameViewController: UIViewController{
         renderCards()
         self.gameModel.updateGameStage()
         
-        if self.gameModel.isDealerStage() {
+        if self.gameModel.gameStage == BJGameModel.BJGameStage.Dealer {
             changeDealerTurn()
         }
     }

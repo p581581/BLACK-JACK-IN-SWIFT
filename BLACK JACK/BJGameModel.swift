@@ -218,10 +218,5 @@ class BJGameModel {
         } else {
             self.didDealerWin = true
         }
-    }
-    
-    func isDealerStage() -> Bool {
-        return self.gameStage == .Dealer
-    }
-    
+    }    
 }
