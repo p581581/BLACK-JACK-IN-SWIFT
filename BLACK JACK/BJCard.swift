@@ -24,7 +24,7 @@ extension Array {
         count = dupeArr.count
         self.removeAll()
         
-        for i in 1..count {
+        for i in 0..count {
             var nElements = count - i
             var n = Int(arc4random()) % nElements
             self.append(dupeArr[n])
@@ -104,8 +104,8 @@ class BJCard {
         
         for suit in 1...4 {
             for digit in 1...13 {
+
                 card = BJCard(digit:digit, suit:BJCardSuit.fromRaw(suit)!)
-                println(card.suit)
                 cards.append(card)
             }
         }

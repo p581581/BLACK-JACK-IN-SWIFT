@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 
 class BLACK_JACKTests: XCTestCase {
     
@@ -20,9 +21,29 @@ class BLACK_JACKTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testBJCard() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        
+        var card : BJCard
+        
+        card = BJCard(digit: 1, suit: .Spade)
+        XCTAssert(card.isAnAce(), "Digit Ace error")
+        card = BJCard(digit: 2, suit: .Club)
+        XCTAssert(!card.isAnAce(), "Digit not Ace error")
+        
+        card = BJCard(digit: 10, suit: .Club)
+        XCTAssert(card.isFaceOrTenCard(), "Digit Ten error")
+        card = BJCard(digit: 13, suit: .Club)
+        XCTAssert(card.isFaceOrTenCard(), "Digit Face error")
+        card = BJCard(digit: 9, suit: .Club)
+        XCTAssert(!card.isFaceOrTenCard(), "Digit not Ten or Face error ")
+        
+        XCTAssertEqualObjects(card.getCardImage(), UIImage(named:  "club-9"), "Get wrong card image.")
+        
+        var cards = card.generateAPackOfRandCards()
+        XCTAssertEqual(cards.count, 52, "generate the wrong number of cards")
+        
+        
     }
     
     func testPerformanceExample() {
