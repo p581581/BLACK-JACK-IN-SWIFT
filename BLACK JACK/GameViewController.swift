@@ -63,7 +63,7 @@ class GameViewController: UIViewController{
         
         // change the Game Stage
         self.gameModel.gameStage = .Dealer
-        changeDealerTurn();
+        changeDealerTurn()
     }
     
     @IBAction func betting(sender : AnyObject) {
@@ -216,9 +216,9 @@ class GameViewController: UIViewController{
     func handleNotificationGameDidEnd(notification: NSNotification) {
         // Game over
         let didDealerWin: AnyObject! = notification.userInfo["didDealerWin"]
-        let cal = betBtn.titleLabel.text.toInt()
         var chips : Int = usrdef.objectForKey("chips") as Int
         var title, message : String
+        var cal : Int? = betBtn ? betBtn.titleLabel.text.toInt() : 0
         
         // revise the alert message
         if didDealerWin? as NSObject == 1 {
@@ -243,10 +243,12 @@ class GameViewController: UIViewController{
                 style: UIAlertActionStyle.Default,
                 handler: {alert in
                     // Back to Menu
-                    if didDealerWin? as NSObject == 1 {
-                        chips -= cal!
-                    } else {
-                        chips += cal!
+                    if cal {
+                        if didDealerWin? as NSObject == 1 {
+                            chips -= cal!
+                        } else {
+                            chips += cal!
+                        }
                     }
                     self.usrdef.setObject(chips, forKey:"chips")
                     self.usrdef.synchronize()

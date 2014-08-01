@@ -86,7 +86,7 @@
         <!--Game View Controller-->
         <scene sceneID="SX6-fF-6Ib">
             <objects>
-                <viewController restorationIdentifier="game" storyboardIdentifier="game" id="M4d-Jb-5fe" customClass="GameViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4d-Jb-5fe" customClass="GameViewController" customModule="BLACK_JACK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B8B-8K-nKp"/>
                         <viewControllerLayoutGuide type="bottom" id="URC-av-RQm"/>

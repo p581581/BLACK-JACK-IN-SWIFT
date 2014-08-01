@@ -73,20 +73,84 @@ class BLACK_JACKTests: XCTestCase {
         XCTAssertEqual(gameModel.calculateBestScore(cards), 0, "calculate the wrong score")
         
         // tesing updating game stage
-        gameModel = BJGameModel()
-        
         //player got 21 points
+        gameModel = BJGameModel()
         gameModel.playerCards = [BJCard(digit: 10, suit: suit), BJCard(digit: 1, suit: suit)]
         gameModel.updateGameStage()
         XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (should be Dealer stage)")
         
         //player got 5 cards (max)
+        gameModel = BJGameModel()
         gameModel.playerCards = [BJCard(digit: 6, suit: suit), BJCard(digit: 1, suit: suit), BJCard(digit: 2, suit: suit), BJCard(digit: 3, suit: suit), BJCard(digit: 5, suit: suit)]
         gameModel.updateGameStage()
         XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (should be Dealer stage)")
         
+        //player lose
+        gameModel = BJGameModel()
+        //player' card are bust
+        gameModel.playerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 11, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Dealer win)")
+        XCTAssert(gameModel.didDealerWin, "the stage is wrong (GameOver. Dealer win)")
         
+        //player lose
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // the same score
+        gameModel.playerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 3, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 3, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Dealer win)")
+        XCTAssert(gameModel.didDealerWin, "the stage is wrong (GameOver. Dealer win)")
         
+        //player lose
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // dealer score is greater than player's
+        gameModel.playerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 1, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 3, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Dealer win)")
+        XCTAssert(gameModel.didDealerWin, "the stage is wrong (GameOver. Dealer win)")
+        
+        //player lose
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // dealer score is greater than player's
+        gameModel.playerCards = [BJCard(digit: 2, suit: suit), BJCard(digit: 6, suit: suit), BJCard(digit: 1, suit: suit), BJCard(digit: 3, suit: suit), BJCard(digit: 4, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 3, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Dealer win)")
+        XCTAssert(gameModel.didDealerWin, "the stage is wrong (GameOver. Dealer win)")
+        
+        //player lose
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // dealer score is greater than player's
+        gameModel.playerCards = [BJCard(digit: 2, suit: suit), BJCard(digit: 5, suit: suit), BJCard(digit: 1, suit: suit), BJCard(digit: 3, suit: suit), BJCard(digit: 4, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 2, suit: suit), BJCard(digit: 6, suit: suit), BJCard(digit: 1, suit: suit), BJCard(digit: 3, suit: suit), BJCard(digit: 4, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Dealer win)")
+        XCTAssert(gameModel.didDealerWin, "the stage is wrong (GameOver. Dealer win)")
+        
+        //dealer lose
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // dealer score is greater than player's
+        gameModel.playerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 1, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 10, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .GameOver, "the stage is wrong (GameOver. Player win)")
+        XCTAssertFalse(gameModel.didDealerWin, "the stage is wrong (GameOver. Player win)")
+        
+        // game continue
+        gameModel = BJGameModel()
+        gameModel.gameStage = .Dealer
+        // dealer score is greater than player's
+        gameModel.playerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 8, suit: suit), BJCard(digit: 1, suit: suit)]
+        gameModel.dealerCards = [BJCard(digit: 9, suit: suit), BJCard(digit: 4, suit: suit), BJCard(digit: 3, suit: suit)]
+        gameModel.updateGameStage()
+        XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (Dealer")
     }
     
     func testPerformanceExample() {
