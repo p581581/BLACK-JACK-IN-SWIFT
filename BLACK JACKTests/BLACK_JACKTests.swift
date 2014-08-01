@@ -153,6 +153,25 @@ class BLACK_JACKTests: XCTestCase {
         XCTAssertEqual(gameModel.gameStage, .Dealer, "the stage is wrong (Dealer")
     }
     
+    func testGameViewController() {
+        
+        
+        //        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        //        let gvc : GameViewController = storyboard.instantiateViewControllerWithIdentifier("game") as GameViewController
+        
+        //        let gvc = GameViewController(coder: nil)
+        //        let vc : ViewController = storyboard.instantiateInitialViewController() as ViewController
+        
+        
+        XCTAssert(true, "testing")
+        
+        //        XCTAssertNotNil(gvc.hitBtn, "stand button shouldn't be enabled.")
+        //        XCTAssert(gvc.hitBtn.enabled, "stand button shouldn't be enabled.")
+        
+        
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
